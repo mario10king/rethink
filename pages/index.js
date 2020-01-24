@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getArticles } from '../api/articles'
+import fetch from 'isomorphic-unfetch';
 
 const Articles = props => (
   <ul>
@@ -16,12 +16,10 @@ const ArticleSummary = props => (
 );
 
 Articles.getInitialProps = async function() {
-  const res = await getArticles();
-  const data = await res.json();
+  const res = await fetch('http://localhost:3000/api/articles');
+  const articles = await res.json();
 
-  return {
-    articles: data.data
-  };
+  return { articles };
 };
 
 export default Articles;
