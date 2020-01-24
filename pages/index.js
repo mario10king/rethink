@@ -1,17 +1,23 @@
-import fetch from 'isomorphic-unfetch';
+import Link from 'next/link';
+import { getArticles } from '../api/articles'
 
-const Articles = props => props.articles.map(article => <h3 key={article.id}>{article.title}</h3>);
+const Articles = props => (
+  <ul>
+    {props.articles.map(article => (
+      <ArticleSummary article={article} />
+    ))}
+  </ul>
+);
+
+const ArticleSummary = props => (
+  <li key={props.article.id}>
+    <Link href={`/article/${props.article.id}`}>{props.article.title}</Link>
+  </li>
+);
 
 Articles.getInitialProps = async function() {
-  const res = await fetch('https://rethink.software/api/v2/jobs.backend', {
-    method: 'POST',
-    headers: {
-      'COntent-Type': 'application/json'
-    },
-    body: JSON.stringify({ query: 'tech' })
-  });
+  const res = await getArticles();
   const data = await res.json();
-  console.log(data);
 
   return {
     articles: data.data
