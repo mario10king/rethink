@@ -1,18 +1,15 @@
-import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
+import Layout from '../components/Layout';
+import PreviewBox from '../components/articles/PreviewBox';
 
 const Articles = props => (
-  <ul>
-    {props.articles.map(article => (
-      <ArticleSummary article={article} />
-    ))}
-  </ul>
-);
-
-const ArticleSummary = props => (
-  <li key={props.article.id}>
-    <Link href={`/article/${props.article.id}`}>{props.article.title}</Link>
-  </li>
+  <Layout>
+    <div>
+      {props.articles.map(article => (
+        <PreviewBox article={article} />
+      ))}
+    </div>
+  </Layout>
 );
 
 Articles.getInitialProps = async function() {
