@@ -8,7 +8,7 @@ const Header = () => (
     <style jsx>{`
       a, a:visited {
         text-decoration: none;
-        color: black;
+        color: white;
       }
 
       h1 {
