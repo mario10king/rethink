@@ -17,7 +17,7 @@ const InfoBox = article => {
         p {
           margin-bottom: 0px;
           display: inline-block;
-          color: grey;
+          color: white;
         }
 
         #authors {
