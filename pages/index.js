@@ -6,7 +6,7 @@ const Articles = (props) => (
   <Layout>
     <div>
       {props.articles.map((article) => (
-        <PreviewBox article={article} />
+        <PreviewBox key={article.id} article={article} />
       ))}
     </div>
   </Layout>
