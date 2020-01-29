@@ -1,4 +1,4 @@
-const InfoBox = article => {
+const InfoBox = (article) => {
   const { authors, published_at, word_count, read_time } = article;
   const readTimeMinutes = Math.round(read_time / 60);
 
@@ -37,7 +37,7 @@ const InfoBox = article => {
   );
 };
 
-const formatDate = dateString => {
+const formatDate = (dateString) => {
   const date = new Date(dateString);
   const dateOptions = { month: 'long', day: 'numeric', year: 'numeric' };
   const timeOptions = { hour: '2-digit', minute: '2-digit' };
@@ -48,7 +48,7 @@ const formatDate = dateString => {
   return `${formattedDate} at ${formattedTime}`;
 };
 
-const formatAuthors = authors => {
+const formatAuthors = (authors) => {
   const authorsLength = authors.length;
 
   return authors.map(function(author, index) {

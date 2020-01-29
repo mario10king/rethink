@@ -2,10 +2,10 @@ import fetch from 'isomorphic-unfetch';
 import Layout from '../components/Layout';
 import PreviewBox from '../components/articles/PreviewBox';
 
-const Articles = props => (
+const Articles = (props) => (
   <Layout>
     <div>
-      {props.articles.map(article => (
+      {props.articles.map((article) => (
         <PreviewBox article={article} />
       ))}
     </div>

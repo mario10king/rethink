@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const PreviewBox = props => (
+const PreviewBox = (props) => (
   <Link href={`/article/${props.article.id}`}>
     <a>
       <div className="container" key={props.article.id}>

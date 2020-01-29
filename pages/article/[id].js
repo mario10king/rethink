@@ -2,7 +2,7 @@ import fetch from 'isomorphic-unfetch';
 import Layout from '../../components/Layout';
 import InfoBox from '../../components/article/InfoBox';
 
-const Article = article => {
+const Article = (article) => {
   const { title, description, image_url, ...rest } = article;
 
   return (

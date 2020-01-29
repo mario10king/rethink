@@ -6,7 +6,8 @@ const Header = () => (
       <a>Rethink Coding Challenge</a>
     </Link>
     <style jsx>{`
-      a, a:visited {
+      a,
+      a:visited {
         text-decoration: none;
         color: white;
       }
