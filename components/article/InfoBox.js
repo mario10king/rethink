@@ -49,6 +49,10 @@ const formatDate = (dateString) => {
 };
 
 const formatAuthors = (authors) => {
+  if (authors === null) {
+    return '';
+  }
+
   const authorsLength = authors.length;
 
   return authors.map(function(author, index) {
