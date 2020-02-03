@@ -2,7 +2,7 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 const PreviewBox = (props) => (
-  <Link href={`/article/${props.article.id}`}>
+  <Link href={'/article/[id]'} as={`/article/${props.article.id}`}>
     <a>
       <div className="container" key={props.article.id}>
         <div className="contents">
