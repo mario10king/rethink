@@ -4,7 +4,7 @@ import Layout from '../../components/Layout';
 import InfoBox from '../../components/article/InfoBox';
 
 const Article = (article) => {
-  const { title, description, image_url, ...rest } = article;
+  const { articleURL, title, description, image_url, ...rest } = article;
 
   return (
     <Layout>
@@ -14,6 +14,7 @@ const Article = (article) => {
         <div className="content">
           <h1> {title} </h1>
           <p> {description} </p>
+          <a href={articleURL}>Go to Article</a>
         </div>
         <style jsx>{`
           .root {
@@ -36,10 +37,11 @@ Article.getInitialProps = async function(context) {
   const res = await fetch(`http://localhost:3000/api/article/${id}`);
   const article = await res.json();
 
-  return { ...article };
+  return { articleURL: article.url, ...article };
 };
 
 Article.propTypes = {
+  articleURL: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
   image_url: PropTypes.string
