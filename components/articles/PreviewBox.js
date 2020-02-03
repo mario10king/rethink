@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import PropTypes from 'prop-types';
 
 const PreviewBox = (props) => (
   <Link href={`/article/${props.article.id}`}>
@@ -32,5 +33,13 @@ const PreviewBox = (props) => (
     </a>
   </Link>
 );
+
+PreviewBox.propTypes = {
+  article: PropTypes.shape({
+    id: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string
+  })
+};
 
 export default PreviewBox;

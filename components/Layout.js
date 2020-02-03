@@ -1,4 +1,5 @@
 import Header from './Header';
+import PropTypes from 'prop-types';
 
 const Layout = (props) => (
   <div className="root">
@@ -18,5 +19,9 @@ const Layout = (props) => (
     `}</style>
   </div>
 );
+
+Layout.propTypes = {
+  children: PropTypes.node
+};
 
 export default Layout;

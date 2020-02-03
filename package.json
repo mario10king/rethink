@@ -43,12 +43,15 @@
     "jest": "^25.1.0",
     "lint-staged": "^10.0.3",
     "prettier": "^1.19.1",
+    "prop-types": "^15.7.2",
     "react-test-renderer": "^16.12.0"
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix"
   },
   "jest": {
-    "setupFilesAfterEnv": ["<rootDir>/enzyme.js"]
+    "setupFilesAfterEnv": [
+      "<rootDir>/enzyme.js"
+    ]
   }
 }

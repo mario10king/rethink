@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-unfetch';
+import PropTypes from 'prop-types';
 import Layout from '../../components/Layout';
 import InfoBox from '../../components/article/InfoBox';
 
@@ -36,6 +37,12 @@ Article.getInitialProps = async function(context) {
   const article = await res.json();
 
   return { ...article };
+};
+
+Article.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  image_url: PropTypes.string
 };
 
 export default Article;

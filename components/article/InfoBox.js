@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const InfoBox = (article) => {
   const { authors, published_at, word_count, read_time } = article;
   const readTimeMinutes = Math.round(read_time / 60);
@@ -61,6 +63,15 @@ const formatAuthors = (authors) => {
     }
     return `${author} and `;
   });
+};
+
+InfoBox.propTypes = {
+  article: PropTypes.shape({
+    author: PropTypes.string,
+    published_at: PropTypes.string,
+    word_count: PropTypes.number,
+    read_time: PropTypes.number
+  })
 };
 
 export default InfoBox;

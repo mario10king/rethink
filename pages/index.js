@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-unfetch';
+import PropTypes from 'prop-types';
 import Layout from '../components/Layout';
 import PreviewBox from '../components/articles/PreviewBox';
 
@@ -17,6 +18,10 @@ Articles.getInitialProps = async function() {
   const articles = await res.json();
 
   return { articles };
+};
+
+Articles.propTypes = {
+  articles: PropTypes.arrayOf(PropTypes.object)
 };
 
 export default Articles;
